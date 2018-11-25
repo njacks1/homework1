@@ -1,0 +1,82 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+// Variables
+    double d1; //diameter one
+    double d2; //diameter two
+    double d3; //diameter three
+    double sa1;
+    double sa2;
+    double sa3;
+    double r1;
+    double r2;
+    double r3;
+    double vol1;
+    double vol2;
+    double vol3;
+    double avgv;
+    double avgsa;
+    double const pi = acos(-1.0); //pi as a constant
+    
+    
+// Statements to user
+    cout << "Enter the diameter (in meters) for the first hemisphere:" << endl;
+    cin >> d1;
+    cout << endl;
+    cout << "Enter the diameter (in meters) for the second hemisphere:" << endl;
+    cin >> d2;
+    cout << endl;
+    cout << "Enter the diameter (in meters) for the third hemisphere:" << endl;
+    cin >> d3;
+    cout << endl;
+    
+// Algorithim
+    
+    //setting diameter values to radius values via r=d/2
+    r1 = d1/2;
+    r2 = d2/2;
+    r3 = d3/2;
+    
+    //computation of volumes with radius values
+    vol1 = (2.0/3.0)*(pi)*(pow(r1,3));
+    vol2 = (2.0/3.0)*(pi)*(pow(r2,3));
+    vol3 = (2.0/3.0)*(pi)*(pow(r3,3));
+    
+    //computation of circumferences
+    sa1 = 3.0*pi*(pow(r1,2));
+    sa2 = 3.0*pi*(pow(r2,2));
+    sa3 = 3.0*pi*(pow(r3,2));
+    
+    //computation of average volume
+    avgv = (vol1+vol2+vol3)/3;
+    
+    //computation of avg sa
+    avgsa = (sa1 + sa2 + sa3)/3;
+    
+//output statements
+    
+    cout << fixed << setprecision(3) << "The Volume of the Hemisphere with Diameter: " << d1 << " meters is: " << vol1 << " meters^3" << endl;
+    cout << fixed << setprecision(3) << "The Surface Area of the Hemisphere with Diameter: " << d1 << " meters is: " << sa1 << " meters^2" << endl;
+    cout << endl;
+    
+    cout << fixed << setprecision(3) << "The Volume of the Hemisphere with Diameter: " << d2 << " meters is: " << vol2 << " meters^3" << endl;
+    cout << fixed << setprecision(3) << "The Surface Area of the Hemisphere with Diameter: " << d2 << " meters is: " << sa2 << " meters^2" << endl;
+    cout << endl;
+    
+    cout << fixed << setprecision(3) << "The Volume of the Hemisphere with Diameter: " << d3 << " meters is: " << vol3 << " meters^3" << endl;
+    cout << fixed << setprecision(3) << "The Surface Area of the Hemisphere with Diameter: " << d3 << " meters is: " << sa3 << " meters^2" << endl;
+    cout << endl;
+    
+    cout << fixed << setprecision(3) << "The Average Volume of the three Hemispheres is: " << avgv << " meters^3" << endl;
+    cout << fixed << setprecision(3) << "The Average Surface Area of the three Hemipsheres is: " << avgsa << " meters^2" << endl;
+    cout << endl;
+    
+    cout << "Done ... Good Bye!" << endl;
+    
+    return 0;
+}
